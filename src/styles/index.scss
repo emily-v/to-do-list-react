@@ -3,3 +3,11 @@
 #listContainer {
     width:400px;
 }
+
+li button {
+    visibility:hidden;
+}
+
+li:hover button {
+    visibility:visible;
+}

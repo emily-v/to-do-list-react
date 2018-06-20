@@ -17,3 +17,21 @@ export class Home extends React.Component{
         );
     }
 }
+
+//NOTES
+    {/*<li className="list-group-item d-flex justify-content-between align-items-center">
+        Item 1
+        <button type="button" className=" close text-muted">&times;</button>
+    </li>
+    <li className="list-group-item d-flex justify-content-between align-items-center">
+        Item 2
+        <button type="button" className=" close text-muted">&times;</button>
+    </li>
+    <li className="list-group-item d-flex justify-content-between align-items-center">
+        Item 3
+        <button type="button" className=" close text-muted">&times;</button>
+    </li>
+    <li className="list-group-item d-flex justify-content-between align-items-center">
+        Item 4
+        <button type="button" className=" close text-muted">&times;</button>
+    </li>*/}

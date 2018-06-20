@@ -14,7 +14,9 @@ import ListContainer from './component/ListContainer.jsx';
 //render your react application
 ReactDOM.render(
     <div>
-        <ListContainer />
+        <ListContainer
+            //tasks={this.state.tasks}
+            />
     </div>,
     document.querySelector('#app')
 );
