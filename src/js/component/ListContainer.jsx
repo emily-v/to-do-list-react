@@ -8,6 +8,20 @@ export default class ListContainer extends React.Component{
         this.state = {
             tasks:["Item 1", "Item 2", "Item 3", "Item 4"]
         };
+        
+        //this.AddTask = this.AddTask.bind(this);
+    }
+    
+    handleEnter() {
+        this.setState({
+            tasks: this.state.tasks + this.props.input
+        });
+    }
+    
+    handleKeyDown(event) {
+        if (event.keyCode === 13) {
+        this.handleEnter();
+        }
     }
     
     
@@ -16,7 +30,7 @@ export default class ListContainer extends React.Component{
             <div id="listContainer" className="card mx-auto">
                 <h1 className="card-header text-center">To Dos</h1>
                 <div id="listItemContainer" className="card-body">
-                    <input type="text" className="form-control" placeholder="Add task"></input>
+                    <input type="text" className="form-control" placeholder="Add task" value={this.props.input} onKeyDown={this.props.handleKeyDown}></input>{/*can change event to arrow function and remove binder?*/}
                     <ul className="list-group">
                         {this.state.tasks.map(function(task, i){
                             return <li key={i} className="list-group-item d-flex justify-content-between align-items-center">{task}
@@ -33,5 +47,22 @@ export default class ListContainer extends React.Component{
 }
 
 ListContainer.propTypes = {
-    task: PropTypes.array
+    task: PropTypes.array,
+    input: PropTypes.string,
+    handleKeyDown: PropTypes.func
 };
+
+/*export class AddTask extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            inputValue: ""
+        };
+    }trying AddTask function instead of class*/
+    
+/*function AddTask(props){    
+    return(
+        
+    );
+};
+*/
