@@ -9,12 +9,12 @@ import 'bootstrap';
 import '../styles/index.scss';
 
 //import your own components
-import ListContainer from './component/ListContainer.jsx';
+import ToDoApp from './component/ToDoApp.jsx';
 
 //render your react application
 ReactDOM.render(
     <div>
-        <ListContainer
+        <ToDoApp
             //tasks={this.state.tasks}
             />
     </div>,

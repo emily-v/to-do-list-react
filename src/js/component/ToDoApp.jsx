@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class ListContainer extends React.Component{
+export default class ToDoApp extends React.Component{
     
     constructor(props){
         super(props);
@@ -28,17 +28,11 @@ export default class ListContainer extends React.Component{
         });
     }
     
-    /*handleClickDelete (event) {
-        var index = parseInt(this.props.index);
-        this.deleteTask(this.index);
-    }*/
-    
-    /*deleteTask () {
-        var taskIndex = this.state.tasks.index;
-        this.state.tasks.splice(this.taskIndex,1);
-        console.log(taskIndex);
-        this.setState({tasks: this.state.tasks});
-    }*/
+    deleteTask (index) {
+        let temp = this.state.tasks; 
+        temp.splice(index,1);
+        this.setState({tasks: temp});
+    }
     
     render(){
         return (
@@ -55,14 +49,14 @@ export default class ListContainer extends React.Component{
                     </input>
                     <ul className="list-group">
                         {
-                        this.state.tasks.map((task,index) => (<li key={index} className="list-group-item d-flex justify-content-between align-items-center">{task}
-                            <button 
-                                type="button" 
-                                className="close text-muted"
-                                onClick={(event) => (console.log(this.props.index))}>
-                                &times;
-                            </button>
-                        </li>))
+                        this.state.tasks.map((task,index) => (
+                            <ListItem 
+                                task = {task}
+                                index = {index}
+                                key = {index}
+                                deleteTask = {(i) => this.deleteTask(i)}
+                            />
+                            ))
                         }
                     </ul>
                 </div>
@@ -72,9 +66,29 @@ export default class ListContainer extends React.Component{
     }
 }
 
-ListContainer.propTypes = {
+ToDoApp.propTypes = {
     task: PropTypes.array,
     input: PropTypes.string,
+    index: PropTypes.number,
+    deleteTask: PropTypes.func
+};
+
+function ListItem(props){
+    {
+        return <li className="list-group-item d-flex justify-content-between align-items-center">
+            {props.task}
+            <button 
+                type="button" 
+                className="close text-muted"
+                onClick={() => props.deleteTask(props.index)}>
+                &times;
+            </button>
+        </li>;
+    }
+}
+
+ListItem.propTypes = {
+    task: PropTypes.string,
     index: PropTypes.number,
     deleteTask: PropTypes.func
 };
