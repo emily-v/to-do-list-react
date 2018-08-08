@@ -14,9 +14,7 @@ import ToDoApp from './component/ToDoApp.jsx';
 //render your react application
 ReactDOM.render(
     <div>
-        <ToDoApp
-            //tasks={this.state.tasks}
-            />
+        <ToDoApp/>
     </div>,
     document.querySelector('#app')
 );
