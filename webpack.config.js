@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+var PrettierPlugin = require("prettier-webpack-plugin");
 
 module.exports = {
   entry: [
@@ -18,7 +19,7 @@ module.exports = {
           use: ['babel-loader', 'eslint-loader']
         },
         {
-          test: /\.scss$/, use: [{
+          test: /\.(css|scss)$/, use: [{
               loader: "style-loader" // creates style nodes from JS strings
           }, {
               loader: "css-loader" // translates CSS into CommonJS
@@ -58,6 +59,17 @@ module.exports = {
     new HtmlWebpackPlugin({
         favicon: '4geeks.ico',
         template: 'template.html'
+    }),
+    new PrettierPlugin({
+      parser: "babylon",
+      printWidth: 80,             // Specify the length of line that the printer will wrap on.
+      tabWidth: 4,                // Specify the number of spaces per indentation-level.
+      useTabs: true,              // Indent lines with tabs instead of spaces.
+      bracketSpacing: true,
+      extensions: [ ".js", ".jsx" ],
+      jsxBracketSameLine: true,
+      semi: true,                 // Print semicolons at the ends of statements.
+      encoding: 'utf-8'           // Which encoding scheme to use on files
     })
   ]
 };
