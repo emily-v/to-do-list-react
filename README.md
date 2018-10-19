@@ -1,4 +1,4 @@
-# Hello World with React and Cloud 9
+## React Simple To Do List
 
 ### Project demo animation
 ![to-do-app-demo](https://media.giphy.com/media/FDtZgR9yZJVMOxJTCT/giphy.gif)
