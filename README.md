@@ -2,6 +2,7 @@
 
 Simple to-do list using State and JavaScript ES6 arrow functions to bind methods to 'this'
 
+
 ![to-do-app-demo](https://media.giphy.com/media/FDtZgR9yZJVMOxJTCT/giphy.gif)
 
 ### Live App: https://emily-v.github.io/to-do-list-react/
@@ -32,3 +33,4 @@ $ npm install
 ```sh
 $ npm run build
 ```
+
