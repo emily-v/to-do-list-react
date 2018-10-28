@@ -1,91 +1,34 @@
-# Hello World with React and Cloud 9
+## Simple To Do List with React
 
-### Project demo animation
+Simple to-do list using State and JavaScript ES6 arrow functions to bind methods to 'this'
+
 ![to-do-app-demo](https://media.giphy.com/media/FDtZgR9yZJVMOxJTCT/giphy.gif)
 
-### Setup and run instructions in IDE:
+### Live App: https://emily-v.github.io/to-do-list-react/
 
-#### Make sure you have node version 8
+Built from the 4GeeksAcademy react-hello boilerplate here: https://github.com/4GeeksAcademy/react-hello
+
+### Run the Project from Cloud 9 IDE
+
+##### Make sure you have node version 8
 ```sh
 $ nvm install 8
 $ nvm use 8
 $ node -v
 ```
 
-##### Download the boilerplate using the BreatheCode CLI
-```
-$ npm i @breathecode/breathecode-cli -g
+#### Then run the app!
+```sh
+$ npm run c9
 ```
 
-##### Download the boilerplate using the BreatheCode CLI
-```
-$ breathecode start:react -r
-```
-##### and install the npm package:
-```
+##### Install the npm package when changes are made to package.json:
+```sh
 $ npm install
 ```
 
-## That is it! 
-
-Start coding your ReactJS application.
-
-Note: If you ever want to manually install all of this read the [MANUAL.md file.](/MANUAL.md)
-
-## How start coding?
-
-Now you have an index.js that will start your javascript execution (like the window.onload).
-
-###### Every time you save your source code (js & css files) you will have to re-build your bundle.
+##### Re-build bundle for deployment outside of GitHub Pages
 
 ```sh
 $ npm run build
 ```
-
-###### Webpack will generate your bundle.js inside the public folder
-
-Check that a public/bundle.js file has been created by Webpack. Read the output from the console that must be similar to this:
-
-```sh
-> workspace@1.0.0 transpile-dev /home/ubuntu/workspace
-> webpack --config webpack.config.js
-
-Hash: 64f06c46f625967b3aeb
-Version: webpack 3.8.1
-Time: 99ms
-    Asset     Size  Chunks             Chunk Names
-bundle.js  2.52 kB       0  [emitted]  main
-   [0] ./src/bundle.js 51 bytes {0} [built]
-```
-
-###### NOTE: You have to re-bundle every time yo update your JS or CSS/SASS files.
-
-You are ready to go! You can commit & push to your new repository whenever you want.
-
-### REMEMBER:
-
-The application flow starts at **index.js**, you have to import any other files or assets into app.js in order for webpack to include them in the bundle.
-
-For example, inside index.js you can do:
-
-```js
-window.onload = function(){
-    console.log('hello world');
-}
-```
-
-To include images, styles or any other type of file just use the **import** command:
-
-```js
-
-    //This will include file.js into your bundle.
-    import 'js/file2.js';
-    
-    //this will include the styles at index.scss to your bundle.
-    import '../styles/index.scss';
-
-```
-
-1. All your JS and CSS code must go inside the src/ directory, and webpack will automaticly bundle them and export them into the public folder.
-
-2. The HTML code must be inside public/index.html
