@@ -47,7 +47,7 @@ export default class ToDoApp extends React.Component {
 						<input
 							type="text"
 							className="form-control"
-							placeholder="Add task"
+							placeholder="What needs to be done?"
 							value={this.state.inputValue}
 							onChange={event => this.handleChange(event)}
 							onKeyDown={event => this.handleKeyDown(event)}
